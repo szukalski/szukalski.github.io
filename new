@@ -1,0 +1,15 @@
+#!/bin/bash
+
+TARGETDIR="./content/posts"
+
+if [ -z "$1" ]; then
+  echo 'You must supply a post title, e.g.'
+  echo '  ./new "The Cool Title of My New Post"'
+  exit 1
+fi
+
+TITLE=${1} # take the input as-is for the Title before sanitizing for directory name
+SANIN=${1// /-} # replace spaces with dashes
+SANIN=${SANIN//_/-} # replace underscores with dashes
+SANIN=${SANIN//[^a-zA-Z0-9\-]/} # remove everything except alphanumeric or dash
+
