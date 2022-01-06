@@ -1,11 +1,11 @@
 {
-  title: "About",
-  date: "2022-01-05",
-  aliases: [
+  "title": "About",
+  "date": "2022-01-05",
+  "aliases": [
     "about-us",
     "contact"
   ],
-  tags: [
+  "tags": [
     "about"
   ]
 }
