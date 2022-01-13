@@ -11,9 +11,6 @@
   ],
   "draft": true
 }
-<!-- https://themes.gohugo.io/themes/hugo-theme-noteworthy/ -->
-<!-- {{< resize-image src="image1.jpg" alt="My first image" >}} -->
-<!-- {{< resize-image src="image2.png" alt="My second image" caption="My caption" >}} -->
 
 ## Life Principles
 
