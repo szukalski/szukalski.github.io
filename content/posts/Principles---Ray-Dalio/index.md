@@ -1,5 +1,5 @@
 {
-  "title": 'Principles - Ray Dalio',
+  "title": "Principles - Ray Dalio",
   "summary": "",
   "date": "2022-01-06T14:19:46Z",
   "lastmod": "2022-01-06T14:19:46Z",

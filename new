@@ -16,7 +16,7 @@ SANIN=${SANIN//[^a-zA-Z0-9\-]/} # remove everything except alphanumeric or dash
 ISOTIME=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
 
 PREFILLTPL="{
-  \"title\": '${TITLE}',
+  \"title\": \"${TITLE}\",
   \"summary\": \"\",
   \"date\": \"${ISOTIME}\",
   \"lastmod\": \"${ISOTIME}\",
