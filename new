@@ -13,3 +13,32 @@ SANIN=${1// /-} # replace spaces with dashes
 SANIN=${SANIN//_/-} # replace underscores with dashes
 SANIN=${SANIN//[^a-zA-Z0-9\-]/} # remove everything except alphanumeric or dash
 
+ISOTIME=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+
+PREFILLTPL="{
+  \"title\": '${TITLE}',
+  \"summary\": \"\",
+  \"date\": \"${ISOTIME}\",
+  \"lastmod\": \"${ISOTIME}\",
+  \"tags\": [
+    \"notes\"
+  ],
+  \"categories\": [
+    \"notes\"
+  ],
+  \"draft\": true
+}
+<!-- https://themes.gohugo.io/themes/hugo-theme-noteworthy/ -->
+<!-- {{< resize-image src=\"image1.jpg\" alt=\"My first image\" >}} -->
+<!-- {{< resize-image src=\"image2.png\" alt=\"My second image\" caption=\"My caption\" >}} -->
+"
+
+# Before we create directories and files, double check they don't exist
+if [[ ! -e "${TARGETDIR}/${SANIN}/" ]]; then
+  mkdir -p "${TARGETDIR}/${SANIN}"
+  touch "${TARGETDIR}/${SANIN}/index.md"
+  echo "${PREFILLTPL}" >> "${TARGETDIR}/${SANIN}/index.md"
+else
+  echo "The directory ${TARGETDIR}/${SANIN}/ already exists!  Aborting."
+  exit 1
+fi
