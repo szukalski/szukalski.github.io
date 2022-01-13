@@ -1,18 +1,28 @@
 {
   "title": "SaaS Fundamentals",
-  "summary": "",
+  "summary": "Notes on SaaS Basics",
   "date": "2022-01-13T12:54:48Z",
   "lastmod": "2022-01-13T12:54:48Z",
   "tags": [
-    "notes",
     "saas"
   ],
   "categories": [
-    "notes",
     "saas"
   ],
   "draft": false
 }
+
+## Attributes of a SaaS Environment
+
+* All tenants deployed by a single automated process
+* All tenants running the same version
+* Customisations are global and available to any tenant
+* Operations have a single pane of glass for all tenants
+* Logging and metrics have tenant context
+* Tenants can be deployed with different multi-tenancy
+* DevOps supports frequent and regular updates
+* Tiers used to distinguish different tenant experiences
+* Operations, architecture, product management, and business all have access to rich metrics data
 
 ## SaaS Mindset
 
@@ -28,19 +38,6 @@
 * How to drive greater customer loyalty?
 * Visibility into customer activity
 
-### SaaS = Technology/Architecture + Processes/Culture
-
-* Focus on the surrounding components:
-{{< resize-image src="saas-components.png" alt="Saas Components" >}}
-
-### Factors that may shape architecture
-
-* Compliance
-* Noisy neighbour
-* Tiering strategy
-* Global reach
-* Tenant isolation
-
 ### Tenant Profiles
 
 * Don't constrain tenant profiles based on current requirements
@@ -52,3 +49,55 @@
 
 * Bring all parties together:
 {{< resize-image src="business-siloes.png" alt="Business Siloes" >}}
+
+## SaaS Architecture Fundamentals
+
+* A mindset and approach to serve and manage customers in a unified experience
+  * Trade-off of customisation for agility and efficiency
+* Success measured on the ability to maximise agility, innovation, growth, and cost efficiency
+
+### The only SaaS blueprint
+
+{{< resize-image src="saas-components.png" alt="Saas Components" >}}
+
+### Factors that may shape architecture
+
+* Compliance
+* Noisy neighbour
+* Tiering strategy
+* Global reach
+* Tenant isolation
+
+### Common architecture models
+
+* Reality is a mix of models for different tiers
+  * Same version in all tiers
+  * Often silo for premium tier
+
+#### Silo
+
+{{< resize-image src="model-silo.png" alt="Silo Model" >}}
+
+#### Bridge
+
+{{< resize-image src="model-bridge.png" alt="Bridge Model" >}}
+
+#### Pool
+
+{{< resize-image src="model-pool.png" alt="Pool Model" >}}
+
+### Key areas that influence SaaS architecture
+
+* Variable tenant load
+* Seamless tenant identity
+* Variable data footprint
+* Operational agility
+
+### Core architectural concepts
+
+* Data partitioning
+* Tenant isolation
+* SaaS identity
+* Onboarding
+* Tiering
+* Metering and billing
