@@ -41,6 +41,18 @@
 <time>January 13, 2022</time>
 <div>
 <p>
+<h2 id=attributes-of-a-saas-environment>Attributes of a SaaS Environment</h2>
+<ul>
+<li>All tenants deployed by a single automated process</li>
+<li>All tenants running the same version</li>
+<li>Customisations are global and available to any tenant</li>
+<li>Operations have a single pane of glass for all tenants</li>
+<li>Logging and metrics have tenant context</li>
+<li>Tenants can be deployed with different multi-tenancy</li>
+<li>DevOps supports frequent and regular updates</li>
+<li>Tiers used to distinguish different tenant experiences</li>
+<li>Operations, architecture, product management, and business all have access to rich metrics data</li>
+</ul>
 <h2 id=saas-mindset>SaaS Mindset</h2>
 <h3 id=saas-is-a-business-model>SaaS is a business model</h3>
 <ul>
@@ -53,20 +65,6 @@
 <li>How can we innovate faster?</li>
 <li>How to drive greater customer loyalty?</li>
 <li>Visibility into customer activity</li>
-</ul>
-<h3 id=saas--technologyarchitecture--processesculture>SaaS = Technology/Architecture + Processes/Culture</h3>
-<ul>
-<li>Focus on the surrounding components:
-<img class=article-image src=/posts/saas-fundamentals/saas-components.png alt="Saas Components">
-</li>
-</ul>
-<h3 id=factors-that-may-shape-architecture>Factors that may shape architecture</h3>
-<ul>
-<li>Compliance</li>
-<li>Noisy neighbour</li>
-<li>Tiering strategy</li>
-<li>Global reach</li>
-<li>Tenant isolation</li>
 </ul>
 <h3 id=tenant-profiles>Tenant Profiles</h3>
 <ul>
@@ -81,11 +79,60 @@
 <img class=article-image src=/posts/saas-fundamentals/business-siloes.png alt="Business Siloes">
 </li>
 </ul>
+<h2 id=saas-architecture-fundamentals>SaaS Architecture Fundamentals</h2>
+<ul>
+<li>A mindset and approach to serve and manage customers in a unified experience
+<ul>
+<li>Trade-off of customisation for agility and efficiency</li>
+</ul>
+</li>
+<li>Success measured on the ability to maximise agility, innovation, growth, and cost efficiency</li>
+</ul>
+<h3 id=the-only-saas-blueprint>The only SaaS blueprint</h3>
+<img class=article-image src=/posts/saas-fundamentals/saas-components.png alt="Saas Components">
+<h3 id=factors-that-may-shape-architecture>Factors that may shape architecture</h3>
+<ul>
+<li>Compliance</li>
+<li>Noisy neighbour</li>
+<li>Tiering strategy</li>
+<li>Global reach</li>
+<li>Tenant isolation</li>
+</ul>
+<h3 id=common-architecture-models>Common architecture models</h3>
+<ul>
+<li>Reality is a mix of models for different tiers
+<ul>
+<li>Same version in all tiers</li>
+<li>Often silo for premium tier</li>
+</ul>
+</li>
+</ul>
+<h4 id=silo>Silo</h4>
+<img class=article-image src=/posts/saas-fundamentals/model-silo.png alt="Silo Model">
+<h4 id=bridge>Bridge</h4>
+<img class=article-image src=/posts/saas-fundamentals/model-bridge.png alt="Bridge Model">
+<h4 id=pool>Pool</h4>
+<img class=article-image src=/posts/saas-fundamentals/model-pool.png alt="Pool Model">
+<h3 id=key-areas-that-influence-saas-architecture>Key areas that influence SaaS architecture</h3>
+<ul>
+<li>Variable tenant load</li>
+<li>Seamless tenant identity</li>
+<li>Variable data footprint</li>
+<li>Operational agility</li>
+</ul>
+<h3 id=core-architectural-concepts>Core architectural concepts</h3>
+<ul>
+<li>Data partitioning</li>
+<li>Tenant isolation</li>
+<li>SaaS identity</li>
+<li>Onboarding</li>
+<li>Tiering</li>
+<li>Metering and billing</li>
+</ul>
 </p>
 </div>
 <div class=page-footer>
 <hr class=footer-divider>
-<a class=tag href=/tags/notes>#notes</a>
 <a class=tag href=/tags/saas>#saas</a>
 </div>
 <link rel=stylesheet type=text/css href=/css/katex.min.css crossorigin=anonymous>
