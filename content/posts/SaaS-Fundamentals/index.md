@@ -31,4 +31,4 @@
 
 * Focus on the surrounding components:
 
-{{< resize-image src="saas-components.pnh" alt="Saas Components" >}}
+{{< resize-image src="saas-components.png" alt="Saas Components" >}}
