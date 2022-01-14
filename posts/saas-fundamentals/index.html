@@ -129,6 +129,48 @@
 <li>Tiering</li>
 <li>Metering and billing</li>
 </ul>
+<h2 id=saas-identity>SaaS Identity</h2>
+<h3 id=saas-identity--user-identity--tenant-context>SaaS Identity = User Identity + Tenant Context</h3>
+<ul>
+<li>JSON Web Token (JWT) with embedded tenant context
+<ul>
+<li>OpenID Connect (OIDC) framework defines JWT
+<ul>
+<li>Allows for <code>ID Token</code> and <code>Access Token</code></li>
+</ul>
+</li>
+<li>Additional attribute for <code>tenant_id</code></li>
+</ul>
+</li>
+</ul>
+<h3 id=amazon-cognito-dilemma>Amazon Cognito Dilemma</h3>
+<ul>
+<li>Independent User Pool per Tenant
+<ul>
+<li>Separate policies</li>
+<li>Better isolation</li>
+<li>Mapping required</li>
+<li>Scale issues</li>
+</ul>
+</li>
+<li>Shared User Pool across Tenants
+<ul>
+<li>Better OAuth flow</li>
+<li>Better scale</li>
+<li>No custom policies</li>
+<li>Isolation challenges</li>
+</ul>
+</li>
+</ul>
+<h3 id=user-mapping>User Mapping</h3>
+<img class=article-image src=/posts/saas-fundamentals/user_mapping.png alt="User Mapping">
+<h3 id=hybrid-identity>Hybrid Identity</h3>
+<ul>
+<li>Just-in-time identity migration creates on-prem users in Cognito when they first login</li>
+</ul>
+<img class=article-image src=/posts/saas-fundamentals/hybrid_identity.png alt="Hybrid Identity">
+<h2 id=saas-onboarding>SaaS Onboarding</h2>
+<img class=article-image src=/posts/saas-fundamentals/onboarding.png alt=Onboarding>
 </p>
 </div>
 <div class=page-footer>
