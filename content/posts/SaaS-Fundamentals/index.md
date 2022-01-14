@@ -101,3 +101,39 @@
 * Onboarding
 * Tiering
 * Metering and billing
+
+## SaaS Identity
+
+### SaaS Identity = User Identity + Tenant Context
+
+* JSON Web Token (JWT) with embedded tenant context
+  * OpenID Connect (OIDC) framework defines JWT
+    * Allows for ```ID Token``` and ```Access Token```
+  * Additional attribute for ```tenant_id```
+
+### Amazon Cognito Dilemma
+
+* Independent User Pool per Tenant
+  * Separate policies
+  * Better isolation
+  * Mapping required
+  * Scale issues
+* Shared User Pool across Tenants
+  * Better OAuth flow
+  * Better scale
+  * No custom policies
+  * Isolation challenges
+
+### User Mapping
+
+{{< resize-image src="user_mapping.png" alt="User Mapping" >}}
+
+### Hybrid Identity
+
+* Just-in-time identity migration creates on-prem users in Cognito when they first login
+
+{{< resize-image src="hybrid_identity.png" alt="Hybrid Identity" >}}
+
+## SaaS Onboarding
+
+{{< resize-image src="onboarding.png" alt="Onboarding" >}}
