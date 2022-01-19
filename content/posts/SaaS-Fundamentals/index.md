@@ -137,3 +137,61 @@
 ## SaaS Onboarding
 
 {{< resize-image src="onboarding.png" alt="Onboarding" >}}
+
+## Microservice Design and Decomposition
+
+Start with coarse-grained services and decompose based on usage
+
+### Microservices and SaaS
+
+* Better aligned with zero downtime
+* More focused on IP/customers
+* Optimised consumption
+
+### Key Areas where SaaS Shapes Decomposition
+
+* Tenant isolation
+* Bulk operations
+  * Separate bulk operations into separate service
+  * Limit noisy neighbour for interactive operations
+  * Throttle or scale bulk operations by tenant tier
+  * Use controlled ingest to import staged data
+* Fault isolation
+  * Create opportunities to continue even when parts of the system are down
+  * Identify fault profiles
+  * Prefer async
+  * What are fall-back and self-healing strategies?
+  * Consider circuit breakers
+* Data partitioning
+  * Silo vs. pooled, and mixed models
+  * How to migrate data?
+  * Compliance vs. agility
+* Tenant tiering & metrics
+  * SLAs per tier
+  * Varying usage and isolation patterns per tier
+  * Use tenant metrics to evolve microservices design
+
+## Tenant Isolation
+
+Authentication + Authorisation != Isolation
+
+### Isolation Strategy Drivers
+
+* Tiering
+* Noisy neighbour
+* Compliance
+* Legacy architecture
+* Opprtunity/cost
+
+### Isolation Models
+
+#### Silo Isolation
+
+##### Silo Isolation Strategies
+
+* Account per tenant
+* VPC per tenant
+* Subnet per tenant (rare)
+
+##### Siloed Infrastructure, Single Pane of Glass
+
