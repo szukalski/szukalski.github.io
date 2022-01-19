@@ -171,6 +171,68 @@
 <img class=article-image src=/posts/saas-fundamentals/hybrid_identity.png alt="Hybrid Identity">
 <h2 id=saas-onboarding>SaaS Onboarding</h2>
 <img class=article-image src=/posts/saas-fundamentals/onboarding.png alt=Onboarding>
+<h2 id=microservice-design-and-decomposition>Microservice Design and Decomposition</h2>
+<p>Start with coarse-grained services and decompose based on usage</p>
+<h3 id=microservices-and-saas>Microservices and SaaS</h3>
+<ul>
+<li>Better aligned with zero downtime</li>
+<li>More focused on IP/customers</li>
+<li>Optimised consumption</li>
+</ul>
+<h3 id=key-areas-where-saas-shapes-decomposition>Key Areas where SaaS Shapes Decomposition</h3>
+<ul>
+<li>Tenant isolation</li>
+<li>Bulk operations
+<ul>
+<li>Separate bulk operations into separate service</li>
+<li>Limit noisy neighbour for interactive operations</li>
+<li>Throttle or scale bulk operations by tenant tier</li>
+<li>Use controlled ingest to import staged data</li>
+</ul>
+</li>
+<li>Fault isolation
+<ul>
+<li>Create opportunities to continue even when parts of the system are down</li>
+<li>Identify fault profiles</li>
+<li>Prefer async</li>
+<li>What are fall-back and self-healing strategies?</li>
+<li>Consider circuit breakers</li>
+</ul>
+</li>
+<li>Data partitioning
+<ul>
+<li>Silo vs. pooled, and mixed models</li>
+<li>How to migrate data?</li>
+<li>Compliance vs. agility</li>
+</ul>
+</li>
+<li>Tenant tiering & metrics
+<ul>
+<li>SLAs per tier</li>
+<li>Varying usage and isolation patterns per tier</li>
+<li>Use tenant metrics to evolve microservices design</li>
+</ul>
+</li>
+</ul>
+<h2 id=tenant-isolation>Tenant Isolation</h2>
+<p>Authentication + Authorisation != Isolation</p>
+<h3 id=isolation-strategy-drivers>Isolation Strategy Drivers</h3>
+<ul>
+<li>Tiering</li>
+<li>Noisy neighbour</li>
+<li>Compliance</li>
+<li>Legacy architecture</li>
+<li>Opprtunity/cost</li>
+</ul>
+<h3 id=isolation-models>Isolation Models</h3>
+<h4 id=silo-isolation>Silo Isolation</h4>
+<h5 id=silo-isolation-strategies>Silo Isolation Strategies</h5>
+<ul>
+<li>Account per tenant</li>
+<li>VPC per tenant</li>
+<li>Subnet per tenant (rare)</li>
+</ul>
+<h5 id=siloed-infrastructure-single-pane-of-glass>Siloed Infrastructure, Single Pane of Glass</h5>
 </p>
 </div>
 <div class=page-footer>
