@@ -195,3 +195,50 @@ Authentication + Authorisation != Isolation
 
 ##### Siloed Infrastructure, Single Pane of Glass
 
+{{< resize-image src="single-pane.png" alt="Single Pane of Glass" >}}
+
+### Pool-Based Isolation
+
+* What is the unit of isolation?
+* How to isolate shared resources?
+* Don't rely on well-behaved code
+
+#### Runtime Isolation Policy
+
+* Applied at each runtime/service
+
+### Compute Isolation
+
+#### Siloed Compute
+
+* "Cluster" per tenant
+* Prevent access across cluster boundaries
+* Using roles:
+  * EC2 = instance profile per tenant
+  * Lambda = execution role per tenant
+
+#### Pooled Compute
+
+* Runtime-acquired tenant scope
+* Compute runs with broader profile/exec scope
+* EKS: Use namespeaces, ingress/egress policies
+
+### Storage Isolation
+
+* No universal isolation strategy
+* Isolation model shaped by partitioning scheme
+
+#### Siloed Storage
+
+* Separate DB per tenant
+
+#### Pooled Storage
+
+* Separate keys per tenant
+  * DynamoDB = Restrict to partition keys
+  * PostgreSQL = Row Level Security
+  * S3 = IAM tag policies + by prefix
+
+### Application Enforced Isolation
+
+{{< resize-image src="application-isolation.png" alt="Application Enforced Isolation" >}}
