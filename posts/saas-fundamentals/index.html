@@ -233,6 +233,56 @@
 <li>Subnet per tenant (rare)</li>
 </ul>
 <h5 id=siloed-infrastructure-single-pane-of-glass>Siloed Infrastructure, Single Pane of Glass</h5>
+<img class=article-image src=/posts/saas-fundamentals/single-pane.png alt="Single Pane of Glass">
+<h3 id=pool-based-isolation>Pool-Based Isolation</h3>
+<ul>
+<li>What is the unit of isolation?</li>
+<li>How to isolate shared resources?</li>
+<li>Don&rsquo;t rely on well-behaved code</li>
+</ul>
+<h4 id=runtime-isolation-policy>Runtime Isolation Policy</h4>
+<ul>
+<li>Applied at each runtime/service</li>
+</ul>
+<h3 id=compute-isolation>Compute Isolation</h3>
+<h4 id=siloed-compute>Siloed Compute</h4>
+<ul>
+<li>&ldquo;Cluster&rdquo; per tenant</li>
+<li>Prevent access across cluster boundaries</li>
+<li>Using roles:
+<ul>
+<li>EC2 = instance profile per tenant</li>
+<li>Lambda = execution role per tenant</li>
+</ul>
+</li>
+</ul>
+<h4 id=pooled-compute>Pooled Compute</h4>
+<ul>
+<li>Runtime-acquired tenant scope</li>
+<li>Compute runs with broader profile/exec scope</li>
+<li>EKS: Use namespeaces, ingress/egress policies</li>
+</ul>
+<h3 id=storage-isolation>Storage Isolation</h3>
+<ul>
+<li>No universal isolation strategy</li>
+<li>Isolation model shaped by partitioning scheme</li>
+</ul>
+<h4 id=siloed-storage>Siloed Storage</h4>
+<ul>
+<li>Separate DB per tenant</li>
+</ul>
+<h4 id=pooled-storage>Pooled Storage</h4>
+<ul>
+<li>Separate keys per tenant
+<ul>
+<li>DynamoDB = Restrict to partition keys</li>
+<li>PostgreSQL = Row Level Security</li>
+<li>S3 = IAM tag policies + by prefix</li>
+</ul>
+</li>
+</ul>
+<h3 id=application-enforced-isolation>Application Enforced Isolation</h3>
+<img class=article-image src=/posts/saas-fundamentals/application-isolation.png alt="Application Enforced Isolation">
 </p>
 </div>
 <div class=page-footer>
