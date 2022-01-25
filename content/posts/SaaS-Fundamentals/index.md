@@ -242,3 +242,47 @@ Authentication + Authorisation != Isolation
 ### Application Enforced Isolation
 
 {{< resize-image src="application-isolation.png" alt="Application Enforced Isolation" >}}
+
+## SaaS Operations
+
+### Key Operational Areas
+
+* Tier-based deployment
+* Targeted deployment
+* Tenant-aware management and monitoring
+* Onboarding automation
+* Cycle time
+* Metrics and analytics
+
+### Tiered Deployments
+
+{{< resize-image src="tiered-deployments.png" alt="Tiered Deployments" >}}
+
+### Metrics and Analytics
+
+* Start with high value metrics
+* Enable top-down visibility
+
+## Billing & Metrics
+
+* Identify your billable unit and abstract it from the customer
+* Manage customer lifecycle with billing provider
+* Aggregate billing data
+  * Database > batch to billing API
+* Assume billing provider downtime
+
+### Billing Models
+
+* Subscription
+* Usage
+* Features
+* Users
+* Mix and match
+
+### Async Fault-Tolerant Customer Creation
+
+{{< resize-image src="customer-creation.png" alt="Customer Creation" >}}
+
+### Separate Billing and Metering
+
+{{< resize-image src="billing-metering.png" alt="Billing and Metering" >}}
