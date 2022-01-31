@@ -199,6 +199,64 @@
   * Can force SSL with ```rds.force_ssl 1```
   * ```SSL OFF``` error usually means client is trying to connect without SSL
 
+### Resource Modification
+
+* Storage Change
+  * 6 hr wait between storage modifications
+  * Increase must be minimum 10%
+  * Can't reduce the storage
+    * Have to export and recreate
+  * Outage inducing
+    * Any change to or from Magnetic
+    * Single AZ IO1 <-> GP2
+* Instance Change
+  * Single AZ : Short outage
+  * Multi-AZ : AZ failover
+* Parameter Groups
+  * Engine configuration values
+  * Static and dynamic
+    * Static needs reboot
+  * Cannot modify default parameter, have to create customer parameter group and associate it with the instance
+* Option Groups
+  * Enable additional features
+  * Persistent and permanent options
+    * Permanent cannot be changed afterwards
+  * Links to VPC instead of instance
+
+### Maintenance
+
+* Engine upgrade needs outage
+* Minor version backward-compatible
+* Major version not backward-compatible
+
+### Troubleshooting RDS
+
+* Parameter group needs reboot to take effect on static parameters
+* MySQL replication
+  * Replication only supports InnoDB storage engine
+  * Ensure replica is read only
+  * If lag is significant, create new read replica
+  * Ensure source retains binary logs long enough for replicas to process changes
+* Postgres replication
+  * Ensure `wal_keep_segments` is large enough to retain WAL files (Write-Ahead Log) for all replicas
+  * Consider increasing `max_wal_senders` for multiple replicas
+  * TransactionLogsDiskUsage, Oldest Replication Slot Lag
+* Too many connections
+  * Increase `max_connections`
+  * Modify instance to larger size
+  * Implement connection pooling on application
+
+### Pricing
+
+* Instance
+* Storage
+* I/O (Magnetic)
+* Backup Storage
+* Data Transfer
+* Licensing
+
+## DynamoDB
+
 ## Resources
 
 [AWS Certified Specialty](https://aws.amazon.com/certification/certified-database-specialty/)
