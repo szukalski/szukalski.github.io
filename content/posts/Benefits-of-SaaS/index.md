@@ -4,10 +4,12 @@
   "date": "2022-03-23T08:49:27Z",
   "lastmod": "2022-03-23T08:49:27Z",
   "tags": [
-    "notes"
+    "notes",
+    "saas"
   ],
   "categories": [
-    "notes"
+    "notes",
+    "saas"
   ],
   "draft": false
 }
