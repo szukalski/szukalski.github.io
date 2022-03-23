@@ -181,7 +181,7 @@ Authentication + Authorisation != Isolation
 * Noisy neighbour
 * Compliance
 * Legacy architecture
-* Opprtunity/cost
+* Opportunity/cost
 
 ### Isolation Models
 
