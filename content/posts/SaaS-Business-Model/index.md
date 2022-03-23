@@ -1,6 +1,6 @@
 {
   "title": "SaaS Business Model",
-  "summary": "",
+  "summary": "The SaaS Business Model",
   "date": "2022-03-23T11:40:49Z",
   "lastmod": "2022-03-23T11:40:49Z",
   "tags": [
