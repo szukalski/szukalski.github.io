@@ -257,6 +257,24 @@
 
 ## DynamoDB
 
+### Architecture
+
+* Components
+  * Tables are a collection of items
+  * Items are a unique group of attributes
+  * Attributes is a functional data element
+* Primary Key
+  * Partition Key (aka Hash Attribute)
+    * Determines which partition
+  * Partition Key + Sort Key
+* Secondary Index
+  * Global Secondary Index
+    * Partition key and sort key can be different than table
+  * Local Secondary Index
+    * Same partition key as table, but different sort key
+* Data stored in partitions
+  * 
+
 ## Resources
 
 [AWS Certified Specialty](https://aws.amazon.com/certification/certified-database-specialty/)
