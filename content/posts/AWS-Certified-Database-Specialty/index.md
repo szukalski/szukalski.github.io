@@ -271,9 +271,62 @@
   * Global Secondary Index
     * Partition key and sort key can be different than table
   * Local Secondary Index
+    * Must be created during table creation
     * Same partition key as table, but different sort key
 * Data stored in partitions
-  * 
+  * Allocation of storage for table
+  * Hash function determines partition using partition key as input
+    * Should be as unique as possible
+  * One partition holds 10GB and supports up to 3,000 RCU or 1,000 WCU
+* Items
+  * Limited to 400KB
+  * Data types
+    * Scalar
+      * Single value
+    * Document
+      * List
+        * Ordered collection of values
+      * Map
+        * Unordered collection of name-value pairs (like JSON)
+      * Set
+        * Multiple scalar values of same type
+* Tables
+  * Unique name per account and region
+  * Case sensitive
+
+### Performance
+
+* Capacity
+  * On-Demand
+  * Provisioned
+    * Consistent and predictable performance
+    * RCUs & WCUs
+  * Same limit (40K RCU/WCU)
+  * Switch once every 24 hrs
+* RCU
+  * 1 strongly consistent read / second = 1 RCU per 4KB item
+  * 2 eventually consistent read / second = 1 RCU per 4KB item
+  * 1 transactional read = 2 RCU per 4 KB item
+* WCU
+  * 1 write / second = 1 WCU per 1KB
+  * 1 transactional write / second = 2 WCU per 1KB
+
+### Scans and Queries
+
+* Foundations
+  * Filtering does not reduce RCU usage, simply discards data
+  * Eventually consistent by default, can use ```ConsistentRead```
+  * Single query returns results within 1MB, can use pagination
+  * Can limit results to reduce RCU
+  * Prefer query over scan
+  * Consider a secondary index if you repeatedly use scans to filter on the same non-PK/SK
+* Scan
+  * Return all items and attributes for given table
+  * Parallel scans can be used to improve performance
+* Query
+  * Find items based on PK values
+    * Optional SK and comparison operator to refine results
+  * Limited to PK, PK+SK, or secondary indexes
 
 ## Resources
 
